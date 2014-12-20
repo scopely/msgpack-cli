@@ -35,7 +35,7 @@ namespace MsgPack.Serialization.DefaultSerializers
 	/// <summary>
 	///		Defines serializer factory for well known structured types.
 	/// </summary>
-	internal static class GenericSerializer
+	public static class GenericSerializer
 	{
 		public static MessagePackSerializer<T> Create<T>( SerializationContext context )
 		{
