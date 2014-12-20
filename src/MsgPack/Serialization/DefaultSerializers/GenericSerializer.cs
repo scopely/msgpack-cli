@@ -251,7 +251,7 @@ namespace MsgPack.Serialization.DefaultSerializers
 			object Create( SerializationContext context );
 		}
 
-		private sealed class NullableInstanceFactory<T> : IInstanceFactory
+		public sealed class NullableInstanceFactory<T> : IInstanceFactory
 			where T : struct
 		{
 			public NullableInstanceFactory() { }
@@ -262,7 +262,7 @@ namespace MsgPack.Serialization.DefaultSerializers
 			}
 		}
 
-		private sealed class ListInstanceFactory<T> : IInstanceFactory
+        public sealed class ListInstanceFactory<T> : IInstanceFactory
 		{
 			public ListInstanceFactory() { }
 
@@ -272,7 +272,7 @@ namespace MsgPack.Serialization.DefaultSerializers
 			}
 		}
 
-		private sealed class DictionaryInstanceFactory<TKey, TValue> : IInstanceFactory
+        public sealed class DictionaryInstanceFactory<TKey, TValue> : IInstanceFactory
 		{
 			public DictionaryInstanceFactory() { }
 
