@@ -7343,17 +7343,14 @@ namespace MsgPack
 					var size = header & 0x1F;
 					var resultValue = new byte[ size ];
 					#region UnpackRawContent
-
-				    if (size > 0)
-				    {
-				        var bytesRead = source.Read(resultValue, 0, size);
-				        if (bytesRead < size)
-				        {
-				            throw new InvalidMessagePackStreamException("Stream unexpectedly ends.");
-				        }
-				    }
-
-				    #endregion UnpackRawContent
+					
+					var bytesRead = source.Read( resultValue, 0, size );
+					if( bytesRead < size )
+					{
+						throw new InvalidMessagePackStreamException( "Stream unexpectedly ends." );
+					}
+					
+					#endregion UnpackRawContent
 					var resultMpoValue = new MessagePackObject( new MessagePackString( resultValue, false ) );
 					this.InternalCollectionType = CollectionType.None;
 					result = resultMpoValue;
