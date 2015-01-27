@@ -30,7 +30,7 @@
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
-    <OutputPath>..\WheelOfFortune.Client\Assets\Shared\</OutputPath>
+    <OutputPath>..\..\..\WheelOfFortune.Client\Assets\Shared\</OutputPath>
     <DefineConstants>TRACE;UNITY_IPHONE;CODE_ANALYSIS</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
