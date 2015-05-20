@@ -146,7 +146,8 @@ namespace MsgPack.Serialization
 					);
 			}
 
-			if ( type.GetCustomAttributesData().Any( attr =>
+#if !UNITY
+            if ( type.GetCustomAttributesData().Any( attr =>
 				attr.GetAttributeType().FullName == "System.Runtime.Serialization.DataContractAttribute" ) )
 			{
 				return
@@ -187,6 +188,7 @@ namespace MsgPack.Serialization
 						}
 					);
 			}
+#endif
 #if SILVERLIGHT || NETFX_CORE
 			return members.Where( member => member.GetIsPublic() ).Select( member => new SerializingMember( member, new DataMemberContract( member ) ) );
 #else
