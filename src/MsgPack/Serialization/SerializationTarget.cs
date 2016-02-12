@@ -342,7 +342,7 @@ namespace MsgPack.Serialization
 
                                 if (memberInfo.Member.DeclaringType.IsSubclassOf(derived.Member.DeclaringType))
                                 {
-                                    result.Remove(memberInfo);
+                                    result.Remove(derived);
                                 }
                             }
                         }
