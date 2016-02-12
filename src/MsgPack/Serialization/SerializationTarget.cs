@@ -34,6 +34,7 @@ using System.Globalization;
 using System.Linq;
 using System.Reflection;
 using System.Runtime.Serialization;
+using System.Security.Policy;
 
 namespace MsgPack.Serialization
 {
@@ -210,6 +211,11 @@ namespace MsgPack.Serialization
 					// Indexer cannot be target except the type itself implements IDictionary or IDictionary<TKey,TValue>
 					return false;
 				}
+
+			    if (Attribute.IsDefined(asProperty, typeof (ObsoleteAttribute)))
+			    {
+			        return false;
+			    }
 
 #if !NETFX_CORE
 				if ( asProperty.GetSetMethod( true ) != null )
