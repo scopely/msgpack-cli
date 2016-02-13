@@ -212,7 +212,8 @@ namespace MsgPack.Serialization
 					return false;
 				}
 
-			    if (Attribute.IsDefined(asProperty, typeof (ObsoleteAttribute)))
+			    var attribute = (ObsoleteAttribute)Attribute.GetCustomAttribute(asProperty, typeof (ObsoleteAttribute));
+			    if (attribute != null && attribute.IsError)
 			    {
 			        return false;
 			    }
