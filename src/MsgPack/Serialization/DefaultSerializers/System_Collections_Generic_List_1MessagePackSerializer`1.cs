@@ -28,7 +28,7 @@ namespace MsgPack.Serialization.DefaultSerializers
 	/// </summary>
 	/// <typeparam name="T">The type of items of the <see cref="List{T}"/>.</typeparam>
 	// ReSharper disable once InconsistentNaming
-	internal class System_Collections_Generic_List_1MessagePackSerializer<T> : MessagePackSerializer<List<T>>
+	public class System_Collections_Generic_List_1MessagePackSerializer<T> : MessagePackSerializer<List<T>>
 	{
 		private readonly MessagePackSerializer<T> _itemSerializer;
 

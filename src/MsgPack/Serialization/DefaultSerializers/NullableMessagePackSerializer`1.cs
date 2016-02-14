@@ -22,7 +22,7 @@ using System;
 
 namespace MsgPack.Serialization.DefaultSerializers
 {
-	internal class NullableMessagePackSerializer<T> : MessagePackSerializer<T?>
+	public class NullableMessagePackSerializer<T> : MessagePackSerializer<T?>
 		where T : struct
 	{
 		private readonly MessagePackSerializer<T> _valueSerializer;
